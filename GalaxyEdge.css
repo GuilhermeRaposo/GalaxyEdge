@@ -1,0 +1,49 @@
+@font-face {
+    font-family: pixel;
+    src: url(fonts/8-BIT_WONDER.TTF);
+  }
+
+body {
+    background-color: #140558;
+    font-family: pixel;
+    color: white;
+}
+
+#play {
+  margin-top: 2%;
+  margin-left: 7%;
+  color: white;
+  background-color: black;
+  width: 5%;
+  height: 40px;
+  font-family: pixel;
+  border: none;
+}
+
+.displayHealth {
+  color: crimson;
+}
+
+.displayScore {
+  color: green;
+}
+
+#instructions {
+  display: inline-block;
+  padding-right: 1%;
+  border: 3px dashed yellow;
+}
+
+audio {
+  font-family: pixel;
+  background-color: black;
+}
+
+h3 {
+  margin-left: 3%;
+  color: yellow;
+}
+
+li {
+  color: yellow;
+}

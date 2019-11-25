@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galaxy Edge</title>
+    <link rel="stylesheet" href="GalaxyEdge.css">
+</head>
+<body>
+    <h1>Galaxy Edge</h1>
+    <button id="play" onclick="startGame()">Play</button>
+    <canvas id="canvas" width="1" height="1"></canvas>
+    <h2 class="displayHealth">HEALTH: <span id="health" class="displayHealth">100</span></h2>
+    <h2 class="displayScore">SCORE: <span id="score" class="displayScore">0</span></h2>
+    <br>
+    <div id="instructions">
+    <h3>Instructions :</h3>
+    <ul>
+        <li>Use left and right arrow keys to move</li>
+        <li>Getting hit by an asteroid makes you lose 50 health</li>
+        <li>Picking up a screwdriver resets your health to 100</li>
+        <li>Picking up a star multiplies the score you get by 3 for 5 seconds</li>
+        <li>Picking up a nuke explodes all the rocks on the screen</li>
+        <li>Survive as long as possible</li>
+    </ul>
+    </div>
+    <script src="GalaxyEdge.js"></script>
+</body>
+</html>
