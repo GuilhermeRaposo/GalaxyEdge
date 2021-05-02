@@ -2,9 +2,13 @@ let playButton = document.getElementById('play')
 playButton.addEventListener('mousedown', startGame)
 
 let song = new Audio('audio/song.mp3'); 
+song.volume = 0.2;
 let repairSound = new Audio('audio/repairSound.mp3'); 
+repairSound.volume = 0.2;
 let starSound = new Audio('audio/starSound.mp3');       // Audio Files
+starSound.volume = 0.2;
 let nukeSound = new Audio('audio/nukeSound.mp3');
+nukeSound.volume = 0.2;
 
 let playerimg = new Image();
 playerimg.src = 'images/player.png';   
@@ -16,7 +20,7 @@ let starimg = new Image();
 starimg.src = 'images/star.png';
 let nukeimg = new Image();            
 nukeimg.src = 'images/nuke.png';
-
+console.log("abc")
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
@@ -40,9 +44,12 @@ function asteroid(x, y, yspeed){
 
 function startGame(){
     playButton.parentNode.removeChild(playButton);  // Remove the play button
+    const warning = document.getElementById("warning");
+    warning.parentNode.removeChild(warning);
     canvas.width = 600; // Re-sizing the canvas
     canvas.height = 400;
     song.play();    // Start playing background song
+
     setInterval(updateScore, 500); // Start updating score
     setInterval(draw, 15);
     setInterval(checkHit, 50);
