@@ -20,7 +20,6 @@ let starimg = new Image();
 starimg.src = 'images/star.png';
 let nukeimg = new Image();            
 nukeimg.src = 'images/nuke.png';
-console.log("abc")
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
@@ -35,6 +34,7 @@ let star = {x: 0, y: -500}; // star X/Y positions
 let nuke = {x: 0, y: -500}; // nuke X/Y positions
 let spawnPowerupCheck = 0;  // Randomly spawns powerups
 let powerupSpeed = 3;       // powerups Y speed
+let gameOver = false;
 
 function asteroid(x, y, yspeed){
     this.x = x;
@@ -133,15 +133,18 @@ function updatePosition(){
     }
 }
 
-function checkHit(){                                             // Check if player is alive and hits an asteroid or collects a powerup
+function checkHit(){            // Check if player is alive and hits an asteroid or collects a powerup
 
     document.getElementById("health").innerHTML = health;     // Updates health
-    if (health <= 0) {                                         // Game over when health is 0
+    if (health <= 0) {     // Game over when health is 0
         song.pause();
         repairSound.pause();
         starSound.pause();
-        location.reload();
-        alert('Game over');                                 
+        if (!gameOver) {
+            alert('Game over');
+        }
+        window.location.reload();
+        gameOver = true; // Fix infinite loop of alerts on chrome
     }
         
     for (let i = 0; i < asteroids.length; i++){
